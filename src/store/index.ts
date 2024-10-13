@@ -5,7 +5,7 @@ const QUESTIONS_DATA: {
   question: string;
   answer: string[];
   correct_answer: string;
-  user_answer?: string;
+  user_answer: string;
   answered: boolean;
 }[] = [];
 const QUESTION_ID = 0;

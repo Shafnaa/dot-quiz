@@ -59,7 +59,7 @@ const ShowResult = () => {
                   question: result.question,
                   answer: result.answer,
                   correct_answer: result.correct_answer,
-                  user_answer: undefined,
+                  user_answer: "",
                   answered: false,
                 };
               }),
