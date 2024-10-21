@@ -1,6 +1,6 @@
 "use server";
 
-export const GET = async (req: Request) => {
+export const GET = async () => {
   const res = await fetch(
     "https://www.opentdb.com/api.php?amount=10&type=multiple",
     {
@@ -17,11 +17,20 @@ export const GET = async (req: Request) => {
 
   return Response.json(
     {
-      data: data.results.map((result: any) => ({
-        question: result.question,
-        answer: [result.correct_answer, ...result.incorrect_answers].sort(),
-        correct_answer: result.correct_answer,
-      })),
+      data: data.results.map(
+        (result: {
+          type: string
+          difficulty: string;
+          category: string;
+          question: string;
+          correct_answer: string;
+          incorrect_answers: string[];
+        }) => ({
+          question: result.question,
+          answer: [result.correct_answer, ...result.incorrect_answers].sort(),
+          correct_answer: result.correct_answer,
+        })
+      ),
     },
     {
       status: 200,

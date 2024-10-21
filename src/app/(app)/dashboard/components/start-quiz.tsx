@@ -28,15 +28,21 @@ const StartQuiz = () => {
         const data = await res.json();
 
         setQuestionsData([
-          ...data.data.map((result: any) => {
-            return {
-              question: result.question,
-              answer: result.answer,
-              correct_answer: result.correct_answer,
-              user_answer: "",
-              answered: false,
-            };
-          }),
+          ...data.data.map(
+            (result: {
+              question: string;
+              answer: string[];
+              correct_answer: string;
+            }) => {
+              return {
+                question: result.question,
+                answer: result.answer,
+                correct_answer: result.correct_answer,
+                user_answer: "",
+                answered: false,
+              };
+            }
+          ),
         ]);
 
         router.push("/quiz");
