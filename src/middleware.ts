@@ -1,5 +1,4 @@
 import {
-    authMiddleware,
     withAuth,
   } from "@kinde-oss/kinde-auth-nextjs/middleware";
   

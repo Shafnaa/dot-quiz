@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { questionsDataAtom, quizTimerAtom } from "@/store";
 import { useSetAtom } from "jotai";
-import { redirect, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const StartQuiz = () => {
